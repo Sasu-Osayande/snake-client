@@ -25,6 +25,15 @@ const handleUserInput = function (key) {
   if (key === '\u0064') {
     connection.write("Move: right");
   }
+  if (key === '\u0070') {
+    connection.write("Say: ssss");
+  }
+  if (key === '\u0069') {
+    connection.write("Say: teehee");
+  }
+  if (key === '\u006F') {
+    connection.write("Say: ttyl");
+  }
 }
 
 stdin.on("data", handleUserInput);
