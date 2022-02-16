@@ -18,6 +18,8 @@ const connect = function () {
 
   // initials for snake
   conn.write("Name: SAO");
+  
+  // conn.write("Move: up");
 
   // handle incoming data and print message to player
   conn.on("data", (data) => {
