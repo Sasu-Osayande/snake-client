@@ -1,4 +1,5 @@
 // setup interface to handle user input from stdin
+const { SAYINGS, MOVE_UP_KEY, EXIT, MOVE_LEFT_KEY, MOVE_DOWN_KEY, MOVE_RIGHT_KEY, SNAKE, LAUGH, BYE } = require("./constants");
 
 let connection;
 
@@ -10,21 +11,42 @@ const setupInput = (conn) => {
   stdin.resume();
 
 const handleUserInput = function (key) {
-  if (key === '\u0003') {
+  // for (singleKey in KEYS) {
+//   if (MOVE_UP_KEY) {
+//     let value = Object.values(singleKey);
+//     connection.write(value);
+//   }
+// }
+
+  if (key === EXIT) {
     process.exit();
   }
-  if (key === '\u0077') {
+  if (key === MOVE_UP_KEY) {
     connection.write("Move: up");
   }
-  if (key === '\u0061') {
+  if (key === MOVE_LEFT_KEY) {
     connection.write("Move: left");
   }
-  if (key === '\u0073') {
+  if (key === MOVE_DOWN_KEY) {
     connection.write("Move: down");
   }
-  if (key === '\u0064') {
+  if (key === MOVE_RIGHT_KEY) {
     connection.write("Move: right");
   }
+  // for (const saying in SAYINGS) {
+  //   if (SAYINGS[saying] === SAYINGS[SNAKE]) {
+  //     let value = Object.values(SAYINGS);
+  //     return connection.write(value);
+  //   }
+  //   if (SAYINGS[LAUGH]) {
+  //     let value = Object.values(saying);
+  //     return connection.write(value);
+  //   }
+  //   if (SAYINGS[BYE]) {
+  //     let value = Object.values(saying);
+  //     return connection.write(value);
+  //   }
+  // }
   if (key === '\u0070') {
     connection.write("Say: ssss");
   }
